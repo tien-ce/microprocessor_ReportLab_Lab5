@@ -1,0 +1,4 @@
+matrix8x8_led.c:13:6:updateColLEDMatrix	24	static
+matrix8x8_led.c:100:6:updateRowLEDMatrix	32	static
+matrix8x8_led.c:120:6:updateMatrixBuffer	16	static
+matrix8x8_led.c:131:6:char_matrix	32	static

@@ -1,0 +1,3 @@
+input_reading.c:31:6:getKeyInput	24	static
+input_reading.c:105:14:is_button_pressed	16	static
+input_reading.c:115:14:is_button_double_clicked	16	static

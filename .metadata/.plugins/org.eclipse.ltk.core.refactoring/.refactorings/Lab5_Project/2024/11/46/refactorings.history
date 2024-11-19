@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Lab5_Project/Core/Inc/CommandPaser_FSM.h&apos; to &apos;Lab5_FSM.h&apos;" description="Rename resource &apos;CommandPaser_FSM.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/CommandPaser_FSM.h" name="Lab5_FSM.h" stamp="1731480683767" updateReferences="true"/>
+</session>

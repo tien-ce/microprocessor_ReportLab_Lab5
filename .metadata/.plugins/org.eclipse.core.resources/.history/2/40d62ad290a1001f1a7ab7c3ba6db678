@@ -1,0 +1,20 @@
+/*
+ * LAB5_FSM.h
+ *
+ *  Created on: Nov 13, 2024
+ *      Author: thuyh
+ */
+
+#ifndef INC_LAB5_FSM_H_
+#define INC_LAB5_FSM_H_
+#define MAX_BUFFER_SIZE 30
+#define IDLE 1
+#define FIND_SOC 2 //Start of command
+#define FIND_EOC 3 // End of command
+#define CAPTURE_DATA 4
+extern int status;
+extern uint8_t buffer_flag;
+extern uint8_t cmd_flag ;
+#endif /* INC_LAB5_FSM_H_ */
+void CommandParser_fsm();
+void UartCommunication_fsm();

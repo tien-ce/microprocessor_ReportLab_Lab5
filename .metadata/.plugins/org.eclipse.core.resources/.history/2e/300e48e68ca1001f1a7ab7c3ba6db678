@@ -1,0 +1,13 @@
+/*
+ * LAB5_FSM.h
+ *
+ *  Created on: Nov 13, 2024
+ *      Author: thuyh
+ */
+#include "main.h"
+#ifndef INC_LAB5_FSM_H_
+#define INC_LAB5_FSM_H_
+#define MAX_BUFFER_SIZE 30
+#endif /* INC_LAB5_FSM_H_ */
+void CommandParser_fsm();
+void UartCommunication_fsm();

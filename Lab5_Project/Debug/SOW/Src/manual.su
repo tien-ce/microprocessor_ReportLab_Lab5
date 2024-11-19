@@ -1,0 +1,2 @@
+manual.c:8:6:manual_init	8	static
+manual.c:12:6:manual_run	8	static

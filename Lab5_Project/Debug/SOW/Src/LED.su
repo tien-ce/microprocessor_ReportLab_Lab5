@@ -1,0 +1,6 @@
+LED.c:9:6:led_on	16	static
+LED.c:12:6:led_off	16	static
+LED.c:15:6:clearAllClock	24	static
+LED.c:30:6:setAllClock	24	static
+LED.c:45:6:setNumberOnClock	64	static
+LED.c:94:6:clearNumberOnClock	24	static

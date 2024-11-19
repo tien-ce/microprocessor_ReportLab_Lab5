@@ -1,0 +1,2 @@
+automatic.c:9:6:automatic_init	4	static
+automatic.c:14:6:automatic_run	8	static
