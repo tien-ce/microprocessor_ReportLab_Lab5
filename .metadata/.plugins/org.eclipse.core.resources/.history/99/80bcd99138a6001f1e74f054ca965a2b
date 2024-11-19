@@ -143,7 +143,6 @@ void capture_data(){
 	cmd_flag = 1;
 	status = IDLE;
 }
-
 void cmd_check(){
 	if(wait_flag == 1 ){
 		if(strcmp(cmd,"OK") == 0){
@@ -177,14 +176,14 @@ void send_data(){
 		setTimer1(0, 1000);
 }
 void wait_ok(){
-	if(num_send >= 3){
-		status = IDLE;
-		wait_flag = 0;
-		num_send = 0;
+	if(buffer_flag == 1){
+		status = FIND_SOC;
 	}
 	else{
-		if(buffer_flag == 1){
-			status = FIND_SOC;
+		if(num_send >= 3){
+			status = IDLE;
+			wait_flag = 0;
+			num_send = 0;
 		}
 		else {
 			if(timer1_flag[0] == 1){

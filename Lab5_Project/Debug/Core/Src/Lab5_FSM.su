@@ -6,6 +6,6 @@ Lab5_FSM.c:87:6:idle_CommandParser	4	static
 Lab5_FSM.c:97:6:find_SOC	16	static
 Lab5_FSM.c:116:6:find_EOC	16	static
 Lab5_FSM.c:131:6:capture_data	24	static
-Lab5_FSM.c:146:6:cmd_check	8	static
-Lab5_FSM.c:168:6:send_data	32	static
-Lab5_FSM.c:178:6:wait_ok	4	static
+Lab5_FSM.c:147:6:cmd_check	8	static
+Lab5_FSM.c:169:6:send_data	32	static
+Lab5_FSM.c:179:6:wait_ok	4	static

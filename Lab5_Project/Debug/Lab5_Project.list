@@ -615,6 +615,7 @@ void capture_data(){
  8000494:	2000009d 	.word	0x2000009d
 
 08000498 <cmd_check>:
+
 void cmd_check(){
  8000498:	b580      	push	{r7, lr}
  800049a:	af00      	add	r7, sp, #0
@@ -768,39 +769,39 @@ void send_data(){
 void wait_ok(){
  80005a8:	b480      	push	{r7}
  80005aa:	af00      	add	r7, sp, #0
-	if(buffer_flag == 1){
+	if(num_send >= 3){
  80005ac:	4b10      	ldr	r3, [pc, #64]	; (80005f0 <wait_ok+0x48>)
  80005ae:	781b      	ldrb	r3, [r3, #0]
- 80005b0:	2b01      	cmp	r3, #1
- 80005b2:	d103      	bne.n	80005bc <wait_ok+0x14>
-		status = FIND_SOC;
+ 80005b0:	2b02      	cmp	r3, #2
+ 80005b2:	d909      	bls.n	80005c8 <wait_ok+0x20>
+		status = IDLE;
  80005b4:	4b0f      	ldr	r3, [pc, #60]	; (80005f4 <wait_ok+0x4c>)
- 80005b6:	2202      	movs	r2, #2
+ 80005b6:	2201      	movs	r2, #1
  80005b8:	601a      	str	r2, [r3, #0]
+		wait_flag = 0;
+ 80005ba:	4b0f      	ldr	r3, [pc, #60]	; (80005f8 <wait_ok+0x50>)
+ 80005bc:	2200      	movs	r2, #0
+ 80005be:	701a      	strb	r2, [r3, #0]
+		num_send = 0;
+ 80005c0:	4b0b      	ldr	r3, [pc, #44]	; (80005f0 <wait_ok+0x48>)
+ 80005c2:	2200      	movs	r2, #0
+ 80005c4:	701a      	strb	r2, [r3, #0]
 			if(timer1_flag[0] == 1){
 				status = SEND_DATA;
 			}
 		}
 	}
 }
- 80005ba:	e014      	b.n	80005e6 <wait_ok+0x3e>
-		if(num_send >= 3){
- 80005bc:	4b0e      	ldr	r3, [pc, #56]	; (80005f8 <wait_ok+0x50>)
- 80005be:	781b      	ldrb	r3, [r3, #0]
- 80005c0:	2b02      	cmp	r3, #2
- 80005c2:	d909      	bls.n	80005d8 <wait_ok+0x30>
-			status = IDLE;
- 80005c4:	4b0b      	ldr	r3, [pc, #44]	; (80005f4 <wait_ok+0x4c>)
- 80005c6:	2201      	movs	r2, #1
- 80005c8:	601a      	str	r2, [r3, #0]
-			wait_flag = 0;
- 80005ca:	4b0c      	ldr	r3, [pc, #48]	; (80005fc <wait_ok+0x54>)
- 80005cc:	2200      	movs	r2, #0
- 80005ce:	701a      	strb	r2, [r3, #0]
-			num_send = 0;
- 80005d0:	4b09      	ldr	r3, [pc, #36]	; (80005f8 <wait_ok+0x50>)
- 80005d2:	2200      	movs	r2, #0
- 80005d4:	701a      	strb	r2, [r3, #0]
+ 80005c6:	e00e      	b.n	80005e6 <wait_ok+0x3e>
+		if(buffer_flag == 1){
+ 80005c8:	4b0c      	ldr	r3, [pc, #48]	; (80005fc <wait_ok+0x54>)
+ 80005ca:	781b      	ldrb	r3, [r3, #0]
+ 80005cc:	2b01      	cmp	r3, #1
+ 80005ce:	d103      	bne.n	80005d8 <wait_ok+0x30>
+			status = FIND_SOC;
+ 80005d0:	4b08      	ldr	r3, [pc, #32]	; (80005f4 <wait_ok+0x4c>)
+ 80005d2:	2202      	movs	r2, #2
+ 80005d4:	601a      	str	r2, [r3, #0]
 }
  80005d6:	e006      	b.n	80005e6 <wait_ok+0x3e>
 			if(timer1_flag[0] == 1){
@@ -818,10 +819,10 @@ void wait_ok(){
  80005ea:	bc80      	pop	{r7}
  80005ec:	4770      	bx	lr
  80005ee:	bf00      	nop
- 80005f0:	2000009c 	.word	0x2000009c
+ 80005f0:	2000009f 	.word	0x2000009f
  80005f4:	20000000 	.word	0x20000000
- 80005f8:	2000009f 	.word	0x2000009f
- 80005fc:	200000d2 	.word	0x200000d2
+ 80005f8:	200000d2 	.word	0x200000d2
+ 80005fc:	2000009c 	.word	0x2000009c
  8000600:	200001fc 	.word	0x200001fc
 
 08000604 <HAL_UART_RxCpltCallback>:
